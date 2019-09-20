@@ -15,6 +15,10 @@ export const sharks = {
 		async incrementAsync(payload: number, rootState: RootState) {
 			await delay(500)
 			dispatch.sharks.increment(payload || rootState.sharks)
+			dispatch.dolphins.decrementDolphin(123);
 		},
+		decrementFromOtherEffect() {
+			dispatch.dolphins.decrementDolphin(12);
+		}
 	}),
 }
